@@ -17,7 +17,7 @@ my_data = pd.read_csv("drug200.csv", delimiter=",")
 print (my_data[0:5])        # 显示5行，有sex, BP, cholesterol，还有Y列：drug X Y C ... 非交互模式下需要 print()
 
 # 1. pre-processing
-# a. 创建特征值 feature（X），
+# a. 创建特征值 feature（X）
 X = my_data[['Age', 'Sex', 'BP', 'Cholesterol', 'Na_to_K']].values
 print (X[0:5])
 
