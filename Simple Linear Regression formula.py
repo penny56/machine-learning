@@ -1,8 +1,5 @@
-######################### import required linraries
-
 import numpy as np
 import matplotlib.pyplot as plt
-# %matplotlib inline  # 图像直接显示在 Notebook 的输出单元中，而不需要使用 plt.show()
 
 # linear Regression 比较简单，在 X 与 Y 之间建立一个线性关系，用一个简单的一维方程式，如 2*(x)+3
 x = np.arange(-5.0, 5.0, 0.1) # x = [-5.0, -4.9, -4.8, ..., 4.9]

@@ -3,7 +3,7 @@
 # License: BSD 3 clause
 
 '''
-The example below uses only the first feature of the diabetes dataset, in order to illustrate the data points within the two-dimensional plot. The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
+The example below uses only the first feature of the diabetes（糖尿病） dataset, in order to illustrate the data points within the two-dimensional plot. The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
 The coefficients, residual sum of squares and the coefficient of determination are also calculated.
 '''
@@ -14,6 +14,7 @@ import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
+#1. decide on the question: 使用的是 scikit-learn 的糖尿病数据集（diabetes dataset），展示了如何使用线性回归进行建模和预测，并计算模型的评估指标。
 
 #2. Load the diabetes dataset
 diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
@@ -25,11 +26,10 @@ diabetes_X = diabetes_X[:, np.newaxis, 2]
 print(diabetes_X.shape) # 442 行，每行有 1个特征值（1 列）
 print(diabetes_X[0])
 
-# Split the data into training(80%) / testing(20%) sets
+# b. Split the data set
 diabetes_X_train = diabetes_X[:-20]
 diabetes_X_test = diabetes_X[-20:]
 
-# Split the targets into training/testing sets
 diabetes_y_train = diabetes_y[:-20]
 diabetes_y_test = diabetes_y[-20:]
 
@@ -37,10 +37,8 @@ diabetes_y_test = diabetes_y[-20:]
 # X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2)
 
 
-#3. Create linear regression object
+#3, 4. Create linear regression object and train
 regr = linear_model.LinearRegression()
-
-#4. Train the model using the training sets
 regr.fit(diabetes_X_train, diabetes_y_train)
 
 
